@@ -1,13 +1,13 @@
 <?php
 
-function getAllTasks() 
+function getAllTasks($id) 
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM tasks";
+	$sql = "SELECT * FROM tasks WHERE task_id = :task_id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":id" => $id));
+		":task_id" => $id));
 
 	$db = null;
 

@@ -27,3 +27,27 @@ function deleteTask($id)
 
 	header("Location:" . URL . "list/index");
 }
+
+function add()
+{
+	render("list/create");
+}
+
+function addSave()
+{
+	if (!addList()) {
+		header("location:". URL . "Error/index");
+		exit();
+	}
+	header("location:". URL . "list/index");
+}
+
+function deleteList($id)
+{
+	if (!deleteLists($id)) {
+		header("Location:" . URL . "error/index");
+		exit();
+	}
+
+	header("Location:" . URL . "list/index");
+}

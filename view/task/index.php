@@ -1,11 +1,11 @@
 <main>
 <header>
-		<h1><?= $lists	['list_name']; ?></h1>
+		<h1><?= $List	['list_name']; ?></h1>
 	</header>
 <nav>
 		<ul>
-			<li><a href="edit.php"><h4>Add a task</h4></a></li>
-			<li><a href=" <?= URL ?> list "><h4>Back to lists</h4></a></li>
+			<li><a href=" <?= URL ?>task/add "><h4>Add a task</h4></a></li>
+			<li><a href=" <?= URL ?>list "><h4>Back to lists</h4></a></li>
 		</ul>
 	</nav>
 	<table>
