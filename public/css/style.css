@@ -1,0 +1,121 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	background-color: white;
+	background-position: center;
+	background-repeat: repeat-y;
+}
+td
+{
+	text-align: center;
+}
+th{
+	background-color: #c28f60;
+	color: white;
+}
+li,a
+{
+	display: inline;
+	padding: 5px;
+	text-decoration: none;
+	color: #c28f60;
+	font-family: verdana;
+	font-size: 16px;
+}
+li a:hover, td a:hover
+{
+	text-decoration: underline;
+	color: brown;
+}
+h5 a{
+	color: brown;
+	text-decoration: none;
+	margin-bottom: 30px;
+}
+main
+{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+header
+{
+	background-repeat: no-repeat;
+	background-position: right;
+	height: 230px;
+	
+}
+header.books{
+	height: 150px;
+}
+nav ul li{
+	display: inline-block;
+}
+h1
+{
+	font-family: courier;
+	font-size: 80px;
+	padding-left: 50px;
+	color: brown;
+}
+h3
+{
+	font-family: courier;
+	font-size: 30px;
+	padding-left: 150px;
+	color: #c28f60;
+	
+	margin: 0px;
+}
+h4
+{
+	font-family: courier;
+	font-size: 20px;
+	padding-left: 20px;
+	color: #c28f60;
+
+	margin: 0px;
+}
+table
+{
+border-collapse:collapse;
+width: 900px;
+margin-left: auto;
+margin-right: auto;
+}
+table, td, th
+{
+border:2px solid brown;
+padding: 4px;
+}
+footer
+{
+	text-align: center;
+	color: brown;
+	font-family: Georgia;
+	font-size: 20px;
+	padding-top: 80px;
+	padding-bottom: 20px;
+}
+
+form, form input, form span{
+	font-size : 20px;
+
+}
+
+form label {
+	margin-left : 20px;
+	display : inline-block;
+	width : 120px;
+}
+
+form input[type="text"]{
+	width : 250px;
+}
+
+form div {
+	margin-bottom : 3px;
+}
