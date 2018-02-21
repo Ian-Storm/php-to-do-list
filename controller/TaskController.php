@@ -12,16 +12,30 @@ function index($id)
 }
 
 
-function add()
+function add($id)
 {
-	render("task/create");
+	render("task/create", array(
+		'List' => getList($id)
+	));
 }
 
-function addSave()
+function addSave($id)
 {
-	if (!addTask()) {
+	if (!addTask($id)) {
 		header("location:". URL . "Error/index");
 		exit();
 	}
-	header("location:". URL . "list/readlist");
+	render("task/index", array(
+		'Tasks' => getAllTasks($id),
+		'List' => getList($id)
+	));
+}
+
+function deleteTask($id, $list_id)
+{
+	if (!deleteTasks($id)) {
+		header("Location:" . URL . "error/index");
+		exit();
+	}
+	header("location:". URL . "task/index/" . $list_id);
 }

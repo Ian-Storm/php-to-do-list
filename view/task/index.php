@@ -4,7 +4,7 @@
 	</header>
 <nav>
 		<ul>
-			<li><a href=" <?= URL ?>task/add "><h4>Add a task</h4></a></li>
+			<li><a href=" <?= URL ?>task/add/<?= $List['list_id']?>"><h4>Add a task</h4></a></li>
 			<li><a href=" <?= URL ?>list "><h4>Back to lists</h4></a></li>
 		</ul>
 	</nav>
@@ -23,7 +23,7 @@
 			<td><?= $task['task_duration']; ?></td>
 			<td><?= $task['task_status']; ?></td>
 			<td>Edit</td>
-			<td><a href="<?= URL ?> list/deleteTask/ <?= $task['task_id'] ?>">Delete</td>
+			<td><a href="<?= URL ?>task/deleteTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Delete</td>
 		</tr>
 		<?php } ?>
 	</table>

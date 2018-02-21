@@ -1,9 +1,9 @@
 <h1>Add a Task</h1>
 
-<form action="<?= URL ?>task/addSave" method="post">
-	<label>Task name</label><input type="text" name="task_name"><br>
-	<label>Task descrip.</label><input type="text" name="task_description"><br>
-	<label>Task duration</label><input type="text" name="task_duration"><br>
-	<label>Task status</label><input type="text" name="task_status"><br>
+<form action="<?= URL ?>task/addSave/<?= $List['list_id'] ?>" method="post">
+	<label><h6>Task name</h6></label><input type="text" name="task_name"><br>
+	<label><h6>Task description</h6></label><input type="text" name="task_description"><br>
+	<label><h6>Task duration</h6></label><input type="text" name="task_duration"><br>
+	<label><h6>Task status</h6></label><input type="text" name="task_status">
 	<input type="submit" value="Submit">
 </form>

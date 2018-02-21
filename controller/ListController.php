@@ -18,15 +18,6 @@ function readList($id)
 		));
 }
 
-function deleteTask($id)
-{
-	if (!deleteTasks($id)) {
-		header("Location:" . URL . "error/index");
-		exit();
-	}
-
-	header("Location:" . URL . "list/index");
-}
 
 function add()
 {
