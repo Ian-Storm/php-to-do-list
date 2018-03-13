@@ -42,3 +42,21 @@ function deleteList($id)
 
 	header("Location:" . URL . "list/index");
 }
+
+function editList($id)
+{
+	render("list/edit", array(
+		'list' => getList($id)
+		));
+
+}
+
+function editSave($id)
+{
+	if (!editLists($id)) {
+		header("Location:" . URL . "error/index");
+		exit();
+	}
+
+	header("Location:" . URL . "list/index");
+}

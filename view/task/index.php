@@ -22,7 +22,7 @@
 			<td><?= $task['task_description']; ?></td>
 			<td><?= $task['task_duration']; ?></td>
 			<td><?= $task['task_status']; ?></td>
-			<td>Edit</td>
+			<td><a href="<?= URL ?>task/editTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Edit</td>
 			<td><a href="<?= URL ?>task/deleteTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Delete</td>
 		</tr>
 		<?php } ?>

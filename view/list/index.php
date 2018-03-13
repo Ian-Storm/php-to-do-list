@@ -13,8 +13,8 @@
 		<tr>
 			<td><?= $list['list_name']; ?></td>
 			<td><a href=" <?= URL ?>task/index/<?= $list['list_id'] ?>">Show</td>
-			<td><a href="edit.php">Edit</a></td>
-			<td><a href="<?= URL ?> list/deleteList/ <?= $list['list_id'] ?>">Delete</td>
+			<td><a href="<?= URL ?>list/editList/<?= $list['list_id'] ?>">Edit</a></td>
+			<td><a href="<?= URL ?>list/deleteList/<?= $list['list_id'] ?>">Delete</td>
 		</tr>
 		<?php } ?>
 	</table>

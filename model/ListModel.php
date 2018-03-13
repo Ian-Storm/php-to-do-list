@@ -54,9 +54,27 @@ function deleteLists($id)
 	$sql = "DELETE FROM lists WHERE list_id = :list_id ";
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":list_id" => $id));
+		":list_id" => $id
+		));
 
 	$db = null;
 	
+	return true;
+}
+
+function editLists($id)
+{
+	$list_name = isset($_POST["list_name"]) ? $_POST["list_name"] : NULL;
+	$db = openDatabaseConnection();
+
+	$sql = " UPDATE lists SET list_name = :list_name WHERE list_id = :list_id ";
+	$query = $db->prepare($sql);
+	$query->execute(array(
+		":list_name" => $list_name,
+		":list_id" => $id
+		));
+
+	$db = null;
+
 	return true;
 }

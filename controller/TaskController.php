@@ -39,3 +39,22 @@ function deleteTask($id, $list_id)
 	}
 	header("location:". URL . "task/index/" . $list_id);
 }
+
+function editTask($id, $list_id)
+{
+	render("task/edit", array(
+		'task' => getTask($id),
+		'List' => getList($list_id)
+		));
+
+}
+
+function editSave($id, $list_id)
+{
+	if (!editTasks($id)) {
+		header("Location:" . URL . "error/index");
+		exit();
+	}
+
+	header("Location:" . URL . "task/index/" . $list_id);
+}
