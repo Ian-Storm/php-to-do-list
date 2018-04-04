@@ -10,7 +10,7 @@
 	</nav>
 	<table>
 		<tr>
-			<th>Task</th>
+			<th><a href="<?= URL ?>task/add/<?= $List['list_id']?>">Task</a></th>
 			<th>Description</th>
 			<th>Duration</th>
 			<th>Status</th>
