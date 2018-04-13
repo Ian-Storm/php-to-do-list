@@ -1,13 +1,24 @@
 <?php
 
-function getAllTasks($id) 
+function getAllTasks($id, $sort, $filter) 
 {
 	$db = openDatabaseConnection();
-
-	$sql = "SELECT * FROM tasks WHERE list_id = :list_id";
+	$filter = "%".$filter."%";
+	if ($sort == "task") {
+		$sql = "SELECT * FROM tasks WHERE list_id = :list_id AND (task_name LIKE :filter OR task_description  LIKE :filter OR task_duration LIKE :filter OR task_status LIKE :filter) ORDER BY task_name";
+	} elseif ($sort == "description") {
+		$sql = "SELECT * FROM tasks WHERE list_id = :list_id AND (task_name LIKE :filter OR task_description  LIKE :filter OR task_duration LIKE :filter OR task_status LIKE :filter) ORDER BY task_description";
+	} elseif ($sort == "duration") {
+		$sql = "SELECT * FROM tasks WHERE list_id = :list_id AND (task_name LIKE :filter OR task_description  LIKE :filter OR task_duration LIKE :filter OR task_status LIKE :filter) ORDER BY task_duration";
+	} elseif ($sort == "status") {
+		$sql = "SELECT * FROM tasks WHERE list_id = :list_id AND (task_name LIKE :filter OR task_description  LIKE :filter OR task_duration LIKE :filter OR task_status LIKE :filter) ORDER BY task_status";
+	} else {
+		$sql = "SELECT * FROM tasks WHERE list_id = :list_id AND (task_name LIKE :filter OR task_description  LIKE :filter OR task_duration LIKE :filter OR task_status LIKE :filter) ORDER BY task_id";
+	}
 	$query = $db->prepare($sql);
 	$query->execute(array(
-		":list_id" => $id));
+		":list_id" => $id,
+		":filter" => $filter));
 
 	$db = null;
 

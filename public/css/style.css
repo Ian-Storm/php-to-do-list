@@ -119,3 +119,7 @@ form input[type="text"]{
 form div {
 	margin-bottom : 3px;
 }
+
+th a {
+	color: white;
+}

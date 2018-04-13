@@ -5,8 +5,10 @@ require(ROOT . "model/ListModel.php");
 
 function index($id)
 {
+	$filter = isset($_GET["filter"]) ? $_GET["filter"] : null;
+	$sort = isset($_GET["sort"]) ? $_GET["sort"] : 'task_id';
 	render("task/index", array(
-		'Tasks' => getAllTasks($id),
+		'Tasks' => getAllTasks($id, $sort, $filter),
 		'List' => getList($id)
 	));
 }
@@ -25,10 +27,7 @@ function addSave($id)
 		header("location:". URL . "Error/index");
 		exit();
 	}
-	render("task/index", array(
-		'Tasks' => getAllTasks($id),
-		'List' => getList($id)
-	));
+	header("location:". URL . "task/index/" . $id);
 }
 
 function deleteTask($id, $list_id)

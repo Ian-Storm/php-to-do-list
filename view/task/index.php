@@ -10,11 +10,11 @@
 	</nav>
 	<table>
 		<tr>
-			<th><a href="<?= URL ?>task/add/<?= $List['list_id']?>">Task</a></th>
-			<th>Description</th>
-			<th>Duration</th>
-			<th>Status</th>
-			<th colspan="2">Action</th>
+			<th><a href="<?= URL ?>task/index/<?= $List['list_id']?>?sort=task">Task</a></th>
+			<th><a href="<?= URL ?>task/index/<?= $List['list_id']?>?sort=description">Description</a></th>
+			<th><a href="<?= URL ?>task/index/<?= $List['list_id']?>?sort=duration">Duration</a></th>
+			<th><a href="<?= URL ?>task/index/<?= $List['list_id']?>?sort=status">Status</a></th>
+			<th colspan="2"><a href="<?= URL ?>task/index/<?= $List['list_id']?>?sort=id">Action</a></th>
 		</tr>
 		<?php foreach ($Tasks as $task) { ?>
 		<tr>
@@ -22,9 +22,10 @@
 			<td><?= $task['task_description']; ?></td>
 			<td><?= $task['task_duration']; ?></td>
 			<td><?= $task['task_status']; ?></td>
-			<td><a href="<?= URL ?>task/editTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Edit</td>
-			<td><a href="<?= URL ?>task/deleteTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Delete</td>
+			<td><a href="<?= URL ?>task/editTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Edit</a></td>
+			<td><a href="<?= URL ?>task/deleteTask/<?=$task['task_id']?>/<?=$List['list_id']?>">Delete</a></td>
 		</tr>
 		<?php } ?>
 	</table>
+	<br><input type="text" id="inputFilter" value="<?php if(isset($_GET["filter"])) {echo $_GET["filter"];} ?>"><button id="searchButton">Search</button>
 </main>
